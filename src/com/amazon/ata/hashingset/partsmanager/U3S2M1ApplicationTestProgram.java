@@ -70,6 +70,19 @@ public class U3S2M1ApplicationTestProgram {
                 System.out.println("-".repeat(50) + "\nadding wired part to HashSet in PartManager...");
                 microphonePartManager.addDevicePart(wired);
 
+                // test our findDevicePart method in PartManager
+                System.out.println("Looking for: " + button);
+                DevicePart foundObject = microphonePartManager.findDevicePart(button);
+                System.out.println("Found: " + foundObject);
+
+                // Instantiate an object we have not added to the ArrayList
+                DevicePart charlesPart = new DevicePart("Charles", "123-456",
+                        Arrays.asList(AmazonDevice.ECHO_BUDS));
+
+                System.out.println("Looking for: " + charlesPart);
+                foundObject = microphonePartManager.findDevicePart(charlesPart);
+                System.out.println("Found: " + foundObject);
+
                 return;
         }
 }
